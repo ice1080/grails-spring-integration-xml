@@ -1,23 +1,23 @@
-## Grails 6.2.3 Documentation
+Simple project to show issue with grails 6 and spring integration gateways defined in xml.
 
-- [User Guide](https://docs.grails.org/6.2.3/guide/index.html)
-- [API Reference](https://docs.grails.org/6.2.3/api/index.html)
-- [Grails Guides](https://guides.grails.org/index.html)
----
+The same xml definition works in a spring boot 2 project with spring integration 5.5.20.
 
-## Feature scaffolding documentation
 
-- [Grails Scaffolding Plugin documentation](https://grails.github.io/scaffolding/latest/groovydoc/)
+## Reproduction:
 
-- [https://grails-fields-plugin.github.io/grails-fields/latest/guide/index.html](https://grails-fields-plugin.github.io/grails-fields/latest/guide/index.html)
+```shell
+grails create-app grails-spring-integration-xml
+# add spring integration dependency and xml configuration
+./gradlew bootRun
+```
 
-## Feature asset-pipeline-grails documentation
+### Spring Integration Dependency
 
-- [Grails Asset Pipeline Core documentation](https://www.asset-pipeline.com/manual/)
+```groovy
+implementation 'org.springframework.boot:spring-boot-starter-integration'
+```
 
-## Feature geb documentation
+### Spring Integration Definition:
 
-- [Grails Geb Functional Testing for Grails documentation](https://github.com/grails3-plugins/geb#readme)
-
-- [https://www.gebish.org/manual/current/](https://www.gebish.org/manual/current/)
-
+* resources.xml
+* TestInterface.groovy
